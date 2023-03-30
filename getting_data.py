@@ -48,7 +48,7 @@ df['PTS'] = df['PTS'].astype(float)
 
 
 pd.set_option('display.max_rows', None)
-
+print(pd)
 sns.barplot(x='Tm', y='PTS', data=df)
 plt.show()
 
