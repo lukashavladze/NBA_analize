@@ -12,7 +12,7 @@ for i in headers.columns:
     headers_list.append(i)
 # print(headers_list)
 npdata = np.array(data[0])
-rows = list(range(1, 687))
+rows = list(range(1, 688))
 columns = list(range(1, 31))
 df = pd.DataFrame(npdata, rows, headers_list)
 df = df.drop_duplicates()
@@ -47,13 +47,56 @@ df['PF'] = df['PF'].astype(float)
 df['PTS'] = df['PTS'].astype(float)
 
 
-pd.set_option('display.max_rows', None)
-print(pd)
-sns.barplot(x='Tm', y='PTS', data=df)
+# pd.set_option('display.max_rows', None)
+
+
+
+
+boston_top = df[(df['Tm'] == 'BOS') & (df['PTS'] > 11)]
+
+boston = df[(df['Tm'] == 'BOS')]
+atlanda = df[(df['Tm'] == 'ATL')]
+houston = df[(df['Tm'] == 'HOU')]
+memphis = df[(df['Tm'] == 'MEM')]
+denver = df[(df['Tm'] == 'DEN')]
+sacramento = df[(df['Tm'] == 'SAC')]
+phoenix = df[(df['Tm'] == 'PHO')]
+los_angeles_clippers = df[(df['Tm'] == 'LAC')]
+golden_state = df[(df['Tm'] == 'GSW')]
+minesota = df[(df['Tm'] == 'MIN')]
+new_orlean = df[(df['Tm'] == 'NOP')]
+los_angeles_lakers = df[(df['Tm'] == 'LAL')]
+oklahoma = df[(df['Tm'] == 'OKC')]
+dallas = df[(df['Tm'] == 'DAL')]
+utah = df[(df['Tm'] == 'UTA')]
+portland = df[(df['Tm'] == 'POR')]
+san_antonio = df[(df['Tm'] == 'SAS')]
+milwaukee = df[(df['Tm'] == 'MIL')]
+philadelphia = df[(df['Tm'] == 'PHI')]
+cleveland = df[(df['Tm'] == 'CLE')]
+new_york = df[(df['Tm'] == 'NYK')]
+brooklyn = df[(df['Tm'] == 'BRK')]
+miami = df[(df['Tm'] == 'MIA')]
+toronto = df[(df['Tm'] == 'TOR')]
+chicago = df[(df['Tm'] == 'CHI')]
+washington = df[(df['Tm'] == 'WAS')]
+indiana = df[(df['Tm'] == 'IND')]
+orlando = df[(df['Tm'] == 'ORL')]
+detroit = df[(df['Tm'] == 'DET')]
+charlotte = df[(df['Tm'] == 'CHO')]
+
+print(milwaukee)
+
+# sns.scatterplot(x='PTS', y='Player',  hue='Pos', palette='bright', data=boston)
+# plt.show()
+sns.scatterplot(x='PTS', y='Player',  hue='Pos', palette='bright', data=milwaukee)
 plt.show()
 
+# sns.lmplot(data=boston, x='PTS', y='BLK', hue='Pos')
+# plt.show()
 
 
+# print(boston_top)
 
 
 
